@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Dictionary</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{url_for('static', filename='fonts/material-design-iconic-font/css/material-design-iconic-font.min.css')}}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/app.css')}}">
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="inner">
+				{% block content %}
+				<form action="/search" method="post">
+					<h3>Dictionary</h3>
+					<p>Please enter the word you wish to look up below</p>
+					<label for="word" class="form-group">
+						<input name="word" type="text" class="form-control"  required>
+						<span for="">Word you wish to look up</span>
+						<span class="border"></span>
+					</label>
+					<button>Search 
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+				{% endblock %}
+			</div>
+		</div>
+		
+	</body>
+</html>
